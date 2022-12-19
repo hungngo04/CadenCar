@@ -10,6 +10,7 @@ animate();
 
 function animate(){
     fish.update();
+    canvas.height = window.innerHeight;
     fish.draw(ctx);
     requestAnimationFrame(animate);
 }
