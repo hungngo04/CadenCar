@@ -3,7 +3,7 @@ canvas.height = window.innerHeight;
 canvas.width = 200;
 
 const ctx = canvas.getContext("2d");
-const sea = new seaLane(canvas.width/2, canvas.width);
+const sea = new seaLane(canvas.width/2, canvas.width * 0.9);
 const fish = new Fish(100, 100, 30, 50);
 fish.draw(ctx);
 
