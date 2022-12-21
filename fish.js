@@ -20,10 +20,10 @@ class Fish{
 
     #move(){
         if(this.controls.forward){
-            this.speed += this.acceleration;
+            this.speed+=this.acceleration;
         }
         if(this.controls.reverse){
-            this.speed -= this.acceleration;
+            this.speed-=this.acceleration;
         }
 
         if(this.speed > this.maxSpeed){
@@ -39,11 +39,11 @@ class Fish{
         if(this.speed < 0){
             this.speed += this.flowSpeed;
         }
-        if(Math.abs(this.speed) < this.friction){
+        if(Math.abs(this.speed) < this.flowSpeed){
             this.speed = 0;
         }
 
-        if(this.speed != 0 ){
+        if(this.speed != 0){
             const flip = this.speed > 0 ? 1 : -1;
             if(this.controls.left) {
                 this.angle += 0.03 * flip;
@@ -53,12 +53,7 @@ class Fish{
             }
         }
 
-        if(this.controls.left){
-            this.angle += 0.03;
-        }
-        if(this.controls.right){
-            this.angle -= 0.03;
-        }
+        
 
         this.x -= Math.sin(this.angle) * this.speed;
         this.y -= Math.cos(this.angle) * this.speed;
